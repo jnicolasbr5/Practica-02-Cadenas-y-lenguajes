@@ -9,4 +9,5 @@ class Alfabeto {
 
   public:
     Alfabeto(const std::string& elementos);
+    void Mostrar();
 };

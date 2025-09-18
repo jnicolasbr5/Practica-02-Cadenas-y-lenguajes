@@ -4,7 +4,8 @@
 
 // Inversa
 std::string Cadena::Inversa(const std::string& palabra) {
-  std::string cadena = reverse(palabra.begin(), palabra.end());
+  std::string cadena = palabra;
+  std::reverse(palabra.begin(), palabra.end());
   return cadena;
 }
 

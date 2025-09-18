@@ -2,7 +2,7 @@
 
 #include <set>
 
-class Lenguaje {
+class Lenguaje: {
   private:
     std::set<Cadena> nombre_ = {Cadena("&")};
 
