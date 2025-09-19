@@ -2,9 +2,13 @@
 
 #include "alfabeto.h"
 
+bool Alfabeto::IsEmpty() const {
+  return alfabeto_.empty();
+}
+
 void Alfabeto::Write(std::ostream& os) const {
   unsigned i = 1;
-  os << "Σ = {";
+  os << "{";
   for (char c : alfabeto_) {
     os << c;
     if (i != tamaño_) {
@@ -16,8 +20,11 @@ void Alfabeto::Write(std::ostream& os) const {
 }
 
 void Alfabeto::Read(std::istream& is) {
-  is >> cadena_;
-  for (char c : cadena_) {
+  is >> elementos_;
+  if (!IsEmpty()) {
+    alfabeto_.clear();
+  }
+  for (char c : elementos_) {
     alfabeto_.insert(c);
   }
   tamaño_ = alfabeto_.size();

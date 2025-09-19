@@ -14,15 +14,18 @@
 // Set -> https://www.geeksforgeeks.org/cpp/different-ways-to-iterate-over-a-set-in-c/
 // Getline -> https://www.geeksforgeeks.org/cpp/getline-string-c/
 // Archivos -> https://www.w3schools.com/cpp/cpp_files.asp
+// Librería sstream -> https://www.geeksforgeeks.org/cpp/stringstream-c-applications/
 // Historial de revisiones:
 // 18/09/2025 - Creación (primera versión) del código -> https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia1
 // 19/09/2025 - Segunda versión del código -> 
 // 20/09/2025 - 
-// 1 ./ p02_strings filein . txt fileout . txt opcode
+// 1 ./ p02_strings filein.txt fileout.txt opcode
+// Compilar -> g++ alfabeto.cc cadena.cc lenguaje.cc -o p02_strings
 
 #include <fstream>
 #include <iostream>
 #include <set>
+#include <sstream>
 #include <string>
 
 #include "alfabeto.h"
@@ -32,7 +35,7 @@
 // Cadena / Alfabeto (abbbab   ab) Entrada file
 
 int main (int argc, char* argv[]) {
-  if (argc == 2 && argv[1] == "--help") {
+  if (argc == 2 && std::string(argv[1]) == "--help") {
     std::cout << "Modo de empleo: ./p02_strings filein.txt fileout.txt opcode" << std::endl;
     std::cout << "Debes escribir por línea de comandos el nombre del fichero de entrada,"
               << "el nombre del fichero de salida y un código de operación" << std::endl;
@@ -50,17 +53,36 @@ int main (int argc, char* argv[]) {
     std::cout << "Modo de empleo: ./p02_strings filein.txt fileout.txt opcode" << std::endl;
     return 1;
   }
-  std::ifstream archivo("filein.txt");
-  //getline dividing it into two lines
-  if (!archivo.is_open()) {
+  std::ifstream archivo_entrada("filein.txt");
+  std::ofstream archivo_salida("fileout.txt");
+
+  if (!archivo_entrada.is_open()) {
     std::cout << "El archivo " << argv[1] << " no pudo ser abierto." << std::endl;
     std::cout << "Modo de empleo: ./p02_strings filein.txt fileout.txt opcode" << std::endl;
     return 1;
   }
+  std::string palabra, palabra2;
+  Alfabeto alfabeto;
+  Cadena cadena;
   
+  // Código de operación
+  while (archivo_entrada >> cadena >> alfabeto) {
+    if (opcode == "Alfabeto") {
+      archivo_salida << alfabeto << std::endl;
+    } else if (opcode == "Longitud") {
+      archivo_salida << cadena.GetLongitud() << std::endl;
+    } else if (opcode == "Inversa") {
+      archivo_salida << cadena.Inversa() << std::endl; 
+    } else if (opcode == "Prefijos") {
+
+    } else if (opcode == "Sufijos") {
+
+    }
+  }
   
 
-  archivo.close();
+  archivo_entrada.close();
+  archivo_salida.close();
   return 0;
 }
 
