@@ -5,11 +5,14 @@
 class Cadena {
   private:
     std::string palabra_;
-    int longitud_;
+    unsigned longitud_;
 
   public:
-    Cadena(const std::string& palabra) : palabra_(palabra), longitud_(palabra.size()) {}
+    Cadena() : longitud_(0) {}
     std::string Inversa(const std::string& cadena);
     int GetLongitud() const {return longitud_ ;}
 
+    // Entrada y Salida
+    void Read(std::istream& is);
+    void Write(std::ostream& os) const;
 };

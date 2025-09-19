@@ -13,3 +13,24 @@ std::string Cadena::Inversa(const std::string& palabra) {
 
 
 // Prefijos y sufijos
+
+
+//Entrada y Salida
+void Cadena::Read(std::istream& is) {
+  is >> palabra_;
+}
+
+void Cadena::Write(std::ostream& os) const {
+  os << palabra_;
+}
+
+// Sobrecarga de operadores
+std::ostream& operator<<(std::ostream& os, const Cadena& c) {
+  c.Write(os);
+  return os;
+}
+
+std::istream& operator>>(std::istream& is, Cadena& c) {
+  c.Read(is);
+  return is;
+}

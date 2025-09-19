@@ -2,21 +2,33 @@
 
 #include "alfabeto.h"
 
-Alfabeto::Alfabeto(const std::string& elementos) {
-  for (char c : elementos) {
-    alfabeto_.insert(c);
-  }
-}
-
-void Alfabeto::Mostrar() {
-  int tamaño = alfabeto_.size(), i = 1;
-  std::cout << "Σ = {";
+void Alfabeto::Write(std::ostream& os) const {
+  unsigned i = 1;
+  os << "Σ = {";
   for (char c : alfabeto_) {
-    std::cout << c;
-    if (i != tamaño) {
-      std::cout << ", ";
+    os << c;
+    if (i != tamaño_) {
+      os << ", ";
     }
     i++;
   }
-  std::cout << "}" << std::endl;
+  os << "}" << std::endl;
+}
+
+void Alfabeto::Read(std::istream& is) {
+  is >> cadena_;
+  for (char c : cadena_) {
+    alfabeto_.insert(c);
+  }
+  tamaño_ = alfabeto_.size();
+}
+
+std::ostream& operator<<(std::ostream& os, const Alfabeto& alf) {
+  alf.Write(os);
+  return os;
+}
+
+std::istream& operator>>(std::istream& is, Alfabeto& alf) {
+  alf.Read(is);
+  return is;
 }
