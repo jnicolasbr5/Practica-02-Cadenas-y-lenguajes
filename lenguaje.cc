@@ -6,19 +6,16 @@
 #include "lenguaje.h"
 
 
-void Lenguaje::Clean() {
+void Lenguaje::Reiniciar() {
   lenguaje_.clear();
-  tamaño_ = 1;
   lenguaje_.insert(Cadena("&"));
+  tamaño_ = 1;
 }
 
-bool Lenguaje::IsEmpty() const {
-  return lenguaje_.empty();
-}
-
-
-/* 
 void Lenguaje::Sufijos(const Cadena& c) {
+  if (tamaño_ != 1) {
+    Reiniciar();
+  }
   tamaño_ += c.GetLongitud();
   std::string palabra = c.GetCadena();
   std::string concatenacion;
@@ -27,11 +24,11 @@ void Lenguaje::Sufijos(const Cadena& c) {
     lenguaje_.insert(Cadena(concatenacion));
   }
 }
-*/
+
 
 void Lenguaje::Prefijos(const Cadena& c) {
   if (tamaño_ != 1) {
-    Clean();
+    Reiniciar();
   }
   tamaño_ += c.GetLongitud();
   std::string concatenacion;
@@ -53,7 +50,7 @@ void Lenguaje::Write(std::ostream& os) const {
     }
     i++;
   }
-  os << "} == " << tamaño_ << std::endl;
+  os << "}" << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const Lenguaje& l) {

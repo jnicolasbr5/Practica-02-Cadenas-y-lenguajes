@@ -12,14 +12,12 @@ class Lenguaje {
   public:
     Lenguaje() : lenguaje_{Cadena("&")}, tamaño_(1) {};
 
-    bool IsEmpty() const;
-
-    void Clean();
+    void Reiniciar();
   // Entrada y Salida
     void Write(std::ostream& os) const;
     
   // Cadenas
-    //void Sufijos(const Cadena& c);
+    void Sufijos(const Cadena& c);
     void Prefijos(const Cadena& c);
 };
 

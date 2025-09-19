@@ -16,8 +16,13 @@ std::string Cadena::Inversa() {
   return cadena;
 }
 
+
+// Este operador fue la clave
 bool Cadena::operator<(const Cadena& comp) const {
-  return palabra_ < comp.palabra_;
+  if (palabra_.size() == comp.palabra_.size()) {
+    return palabra_ < comp.palabra_;
+  }
+  return palabra_.size() < comp.palabra_.size();
 }
 
 // Entrada y Salida

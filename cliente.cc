@@ -78,8 +78,8 @@ int main (int argc, char* argv[]) {
       lenguaje.Prefijos(cadena);
       std::cout << lenguaje << std::endl;
     } else if (opcode == "Sufijos") {
-     // lenguaje.Sufijos(cadena);
-      //archivo_salida << lenguaje;
+      lenguaje.Sufijos(cadena);
+      std::cout << lenguaje << std::endl;
     }
   }
 
