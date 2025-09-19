@@ -61,9 +61,10 @@ int main (int argc, char* argv[]) {
     std::cout << "Modo de empleo: ./p02_strings filein.txt fileout.txt opcode" << std::endl;
     return 1;
   }
-  std::string palabra, palabra2;
+
   Alfabeto alfabeto;
   Cadena cadena;
+  Lenguaje lenguaje;
   
   // Código de operación
   while (archivo_entrada >> cadena >> alfabeto) {
@@ -74,12 +75,13 @@ int main (int argc, char* argv[]) {
     } else if (opcode == "Inversa") {
       archivo_salida << cadena.Inversa() << std::endl; 
     } else if (opcode == "Prefijos") {
-
+      lenguaje.Prefijos(cadena);
+      std::cout << lenguaje << std::endl;
     } else if (opcode == "Sufijos") {
-
+     // lenguaje.Sufijos(cadena);
+      //archivo_salida << lenguaje;
     }
   }
-  
 
   archivo_entrada.close();
   archivo_salida.close();

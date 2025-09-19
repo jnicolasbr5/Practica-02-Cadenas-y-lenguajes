@@ -16,13 +16,11 @@ std::string Cadena::Inversa() {
   return cadena;
 }
 
-// Cadena vacía
+bool Cadena::operator<(const Cadena& comp) const {
+  return palabra_ < comp.palabra_;
+}
 
-
-// Prefijos y sufijos
-
-
-//Entrada y Salida
+// Entrada y Salida
 void Cadena::Read(std::istream& is) {
   is >> palabra_;
   longitud_ = palabra_.size();

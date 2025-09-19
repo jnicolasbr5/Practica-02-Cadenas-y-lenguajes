@@ -1,14 +1,14 @@
 #pragma once
 
 #include <string>
-// cadena vacia simbolo &
+
 class Cadena {
   private:
     std::string palabra_;
-    unsigned longitud_;
+    int longitud_;
 
   public:
-    Cadena() : longitud_(0), palabra_() {}
+    Cadena() : palabra_(), longitud_(0) {}
     Cadena(std::string nombre);
     std::string Inversa();
     int GetLongitud() const {return longitud_ ;}
@@ -17,6 +17,8 @@ class Cadena {
     // Entrada y Salida
     void Read(std::istream& is);
     void Write(std::ostream& os) const;
+
+    bool operator<(const Cadena& comp) const;
 };
 
 std::ostream& operator<<(std::ostream& os, const Cadena& c);

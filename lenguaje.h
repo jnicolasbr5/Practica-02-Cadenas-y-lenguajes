@@ -4,20 +4,23 @@
 
 #include "cadena.h"
 
-Cadena cadena_vacia;
-
 class Lenguaje {
   private:
-    std::set<Cadena> prefijos_;
-    std::set<Cadena> sufijos_;
+    std::set<Cadena> lenguaje_;
+    int tamaño_;
 
   public:
-  
+    Lenguaje() : lenguaje_{Cadena("&")}, tamaño_(1) {};
+
+    bool IsEmpty() const;
+
+    void Clean();
   // Entrada y Salida
-    void Read(std::istream& is);
     void Write(std::ostream& os) const;
-  
+    
+  // Cadenas
+    //void Sufijos(const Cadena& c);
+    void Prefijos(const Cadena& c);
 };
 
-std::ostream& operator<<(std::ostream& os, const Cadena& c);
-std::istream& operator>>(std::istream& is, Cadena& c);
+std::ostream& operator<<(std::ostream& os, const Lenguaje& l);

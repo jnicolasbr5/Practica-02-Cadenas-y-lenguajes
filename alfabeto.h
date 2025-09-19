@@ -17,11 +17,9 @@ class Alfabeto {
 
     // Entrada y Salida
     void Write(std::ostream& os) const;
-    void Read(std::istream& is);
-
-    // Sobrecarga de operadores 
-  
+    void Read(std::istream& is);  
 };
 
+// Sobrecarga de operadores
 std::istream& operator>>(std::istream& is, Alfabeto& alf);
 std::ostream& operator<<(std::ostream& os, const Alfabeto& alf);
