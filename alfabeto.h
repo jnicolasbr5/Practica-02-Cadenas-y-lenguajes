@@ -1,3 +1,13 @@
+// Universidad de La Laguna
+// Escuela Superior de Ingeniería y Tecnología
+// Grado en Ingeniería Informática
+// Asignatura: Computabilidad y Algoritmia
+// Curso: 2º
+// Práctica 2: Cadenas y lenguajes
+// Autor: Juan Nicolás Becerra Rogatinscaia
+// Correo: alu0101743011@ull.edu.es
+// Fecha: 23/09/2025
+
 #pragma once
 
 #include <iostream>
@@ -6,13 +16,12 @@
 
 class Alfabeto {
   private: 
-    std::set<char> alfabeto_;
-    unsigned tamaño_ = 0;
-    std::string elementos_;
+    std::set<char> simbolos_;
+    unsigned tamaño_alfabeto_ = 0;
+    std::string cadena_alfabeto_;
 
   public:
-    Alfabeto() : tamaño_(0) {};
-
+    Alfabeto() : tamaño_alfabeto_(0) {};
     bool IsEmpty() const;
 
     // Entrada y Salida

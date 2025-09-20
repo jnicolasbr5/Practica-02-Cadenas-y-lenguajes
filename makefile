@@ -2,7 +2,7 @@ PROG = p02_strings
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g
 
-SOURCES = cliente.cc alfabeto.cc cadena.cc lenguaje.cc
+SOURCES = cya-P02-strings.cc alfabeto.cc cadena.cc lenguaje.cc
 OBJECTS = $(SOURCES:.cc=.o)
 
 all: $(PROG)
