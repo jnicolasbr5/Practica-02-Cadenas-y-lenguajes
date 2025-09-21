@@ -7,6 +7,14 @@
 // Autor: Juan Nicolás Becerra Rogatinscaia
 // Correo: alu0101743011@ull.edu.es
 // Fecha: 23/09/2025
+// Descripción Clase Lenguaje:
+// Representa un lenguaje que contiene cadenas.
+// Puedes crear sufijos y prefijos de cadenas, almacenarlos y mostrarlos.
+// Estructura de datos principal:
+// std::set<Cadena> - almacena cadenas de manera ordenada
+// Historial de modificaciones:
+// Bug fix 1 - El constructor por defecto contiene una cadena vacía y tiene tamaño 1.
+// Bug fix 2 - Reinicio() vacía el lenguaje al crear uno nuevo.
 
 #pragma once
 

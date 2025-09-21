@@ -24,12 +24,11 @@
 // https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia2
 // 20/09/2025 - Tercera versión del código -> 
 // https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia3
-// 1 ./p02_strings filein.txt fileout.txt codigo_operacion
+// ./p02_strings filein.txt fileout.txt codigo_operacion
 
 #include <fstream>
 #include <iostream>
 #include <set>
-#include <sstream>
 #include <string>
 
 #include "alfabeto.h"
@@ -132,4 +131,3 @@ int main(int argc, char* argv[]) {
   }
   return 0;
 }
-

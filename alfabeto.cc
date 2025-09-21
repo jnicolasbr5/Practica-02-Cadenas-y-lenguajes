@@ -19,11 +19,6 @@ bool Alfabeto::IsEmpty() const {
   return simbolos_.empty();
 }
 
-// Devuelve los símbolos del alfabeto
-std::set<char> Alfabeto::GetAlfabeto() const {
-  return simbolos_;
-}
-
 // Comprueba que la cadena coincide con los símbolos de la cadena
 void Alfabeto::ComprobarAlfabetoCadena(const Cadena& palabra) {
   for (char c : palabra.GetCadena()) {

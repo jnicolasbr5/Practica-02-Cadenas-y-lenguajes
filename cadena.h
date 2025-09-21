@@ -7,6 +7,13 @@
 // Autor: Juan Nicolás Becerra Rogatinscaia
 // Correo: alu0101743011@ull.edu.es
 // Fecha: 23/09/2025
+// Descripción Clase Cadena:
+// Representa una cadena de símbolos.
+// Calcula la inversa y la longitud.
+// Historial de modificaciones:
+// Bug fix 1 - El constructor por defecto es una cadena vacía con longitud 0.
+// Bug fix 2 - Añado la sobrecarga < para ordenar las cadenas en un set, 
+//             alfabéticamente y por tamaño.
 
 #pragma once
 
