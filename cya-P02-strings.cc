@@ -16,12 +16,13 @@
 // Librería sstream -> https://www.geeksforgeeks.org/cpp/stringstream-c-applications/
 //  Enum -> https://agrawalsuneet.github.io/blogs/enum-vs-enum-class-in-c++/
 // Historial de revisiones:
+// Main -> https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes
 // 18/09/2025 - Creación (primera versión) del código 
 // -> https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia1
 // 19/09/2025 - Segunda versión del código -> 
 // https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia2
 // 20/09/2025 - Tercera versión del código -> 
-// 
+// https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes/tree/dia3
 // 1 ./p02_strings filein.txt fileout.txt codigo_operacion
 
 #include <fstream>
