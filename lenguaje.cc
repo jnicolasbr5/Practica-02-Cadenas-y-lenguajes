@@ -15,7 +15,7 @@
 
 #include "lenguaje.h"
 
-// Reinicio los valores del lenguaje añadiendo la cadena vacía
+// Reinicia los valores del lenguaje añadiendo la cadena vacía
 void Lenguaje::Reiniciar() {
   conjunto_.clear();
   conjunto_.insert(Cadena("&"));

@@ -9,6 +9,7 @@
 // Fecha: 23/09/2025
 // Finalidad del código
 
+#include <cstdlib>
 #include <iostream>
 
 #include "alfabeto.h"
@@ -16,6 +17,22 @@
 // Devuelve si el alfabeto está vacío 
 bool Alfabeto::IsEmpty() const {
   return simbolos_.empty();
+}
+
+// Devuelve los símbolos del alfabeto
+std::set<char> Alfabeto::GetAlfabeto() const {
+  return simbolos_;
+}
+
+// Comprueba que la cadena coincide con los símbolos de la cadena
+void Alfabeto::ComprobarAlfabetoCadena(const Cadena& palabra) {
+  for (char c : palabra.GetCadena()) {
+    if (simbolos_.find(c) == simbolos_.end()) {
+      std::cerr << "El símbolo " << c << " de la cadena '" << palabra 
+                << "' no pertenece al alfabeto " << *this;
+      exit(1);
+    }
+  }
 }
 
 // Imprime los símbolos de un alfabeto en un flujo de salida

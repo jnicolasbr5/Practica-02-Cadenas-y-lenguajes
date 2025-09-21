@@ -13,8 +13,9 @@
 // Referencias:
 // Set -> https://www.youtube.com/watch?v=i02_JDJS3yw
 // Archivos -> https://www.w3schools.com/cpp/cpp_files.asp
-// Librería sstream -> https://www.geeksforgeeks.org/cpp/stringstream-c-applications/
-//  Enum -> https://agrawalsuneet.github.io/blogs/enum-vs-enum-class-in-c++/
+// Enum -> https://agrawalsuneet.github.io/blogs/enum-vs-enum-class-in-c++/
+// Exit -> https://www.geeksforgeeks.org/cpp/exit-code-1-in-cpp/
+// This -> https://www.geeksforgeeks.org/cpp/this-pointer-in-c/
 // Historial de revisiones:
 // Main -> https://github.com/jnicolasbr5/Practica-02-Cadenas-y-lenguajes
 // 18/09/2025 - Creación (primera versión) del código 
@@ -68,15 +69,15 @@ void MostrarUsoError(Terminal opcion, const std::string& caso = "") {
                 << " de cada cadena de entrada." << std::endl;
       return;
     case Terminal::Archivo: // Fallo del archivo
-      std::cout << "El archivo " << caso << " no pudo ser abierto" << std::endl;
+      std::cerr << "El archivo " << caso << " no pudo ser abierto" << std::endl;
       break;
     case Terminal::Opcode: // Fallo del código de operación
-    std::cout << "La operación '" << caso << "' es incorrecta." << std::endl;
-    std::cout << "Códigos de operación: <Alfabeto> <Longitud> <Inversa> "
+    std::cerr << "La operación '" << caso << "' es incorrecta." << std::endl;
+    std::cerr << "Códigos de operación: <Alfabeto> <Longitud> <Inversa> "
               << "<Prefijos> <Sufijos>" << std::endl;
     break;
   }
-  std::cout << "Pruebe './p02_strings --help' para más información." 
+  std::cerr << "Pruebe './p02_strings --help' para más información." 
             << std::endl;
 }
 
@@ -89,12 +90,12 @@ int main(int argc, char* argv[]) {
     MostrarUsoError(Terminal::Argumentos);
     return 1;
   }
-  std::ifstream archivo_entrada("filein.txt");
+  std::ifstream archivo_entrada(argv[1]);
   if (!archivo_entrada.is_open()) {
     MostrarUsoError(Terminal::Archivo, argv[1]);
     return 1;
   }
-  std::ofstream archivo_salida("fileout.txt");
+  std::ofstream archivo_salida(argv[2]);
   if (!archivo_salida.is_open()) {
     MostrarUsoError(Terminal::Archivo, argv[2]);
     return 1;
@@ -114,6 +115,7 @@ int main(int argc, char* argv[]) {
   
   // Dadas las cadenas y alfabetos, ejecuta los códigos de operación
   while (archivo_entrada >> palabra >> simbolos) {
+    simbolos.ComprobarAlfabetoCadena(palabra);
     if (codigo_operacion == "Alfabeto") {
       archivo_salida << simbolos;
     } else if (codigo_operacion == "Longitud") {

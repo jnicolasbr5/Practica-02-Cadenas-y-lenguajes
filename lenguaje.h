@@ -12,6 +12,7 @@
 
 #include <set>
 
+#include "alfabeto.h"
 #include "cadena.h"
 
 class Lenguaje {

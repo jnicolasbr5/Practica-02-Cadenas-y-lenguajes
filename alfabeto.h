@@ -14,6 +14,8 @@
 #include <set>
 #include <string>
 
+#include "cadena.h"
+
 class Alfabeto {
   private: 
     std::set<char> simbolos_;
@@ -23,6 +25,12 @@ class Alfabeto {
   public:
     Alfabeto() : tamaño_alfabeto_(0) {};
     bool IsEmpty() const;
+
+    // Getter
+    std::set<char> GetAlfabeto() const;
+
+    // Validez Alfabeto - Cadena
+    void ComprobarAlfabetoCadena(const Cadena& palabra);
 
     // Entrada y Salida
     void Write(std::ostream& os) const;

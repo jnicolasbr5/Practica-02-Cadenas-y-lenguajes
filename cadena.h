@@ -18,8 +18,8 @@ class Cadena {
     int longitud_;
 
   public:
-    Cadena() : palabra_(), longitud_(0) {}
-    Cadena(std::string nombre);
+    Cadena() : palabra_("&"), longitud_(0) {}
+    Cadena(const std::string& nombre);
 
     // Cadena inversa
     std::string Inversa();

@@ -15,9 +15,8 @@
 #include <string>
 
 // Construye el objeto con la cadena y su longitud
-Cadena::Cadena(std::string nombre) : palabra_(nombre) {
-  longitud_ = palabra_.size();
-}
+Cadena::Cadena(const std::string& palabra) // Comprueba si es cadena vacía
+       : palabra_(palabra), longitud_(palabra == "&" ? 0 : palabra.size()) {}
 
 // Devuelve la cadena inversa
 std::string Cadena::Inversa() {
@@ -29,11 +28,11 @@ std::string Cadena::Inversa() {
 // Sobrecarga del operador < para comparar Cadenas
 // Comparo las cadenas por longitud, considerando como menor la cadena más corta.
 // Si ambas cadenas tienen la misma longitud, las comparo alfabéticamente
-bool Cadena::operator<(const Cadena& comp) const {
-  if (palabra_.size() == comp.palabra_.size()) { // Alfabéticamente
-    return palabra_ < comp.palabra_;
+bool Cadena::operator<(const Cadena& comparacion) const {
+  if (palabra_.size() == comparacion.palabra_.size()) { // Alfabéticamente
+    return palabra_ < comparacion.palabra_;
   }
-  return palabra_.size() < comp.palabra_.size(); // Por tamaño
+  return palabra_.size() < comparacion.palabra_.size(); // Por tamaño
 }
 
 // Lee la cadena desde un flujo de entrada
@@ -44,7 +43,7 @@ void Cadena::Read(std::istream& is) {
 
 // Imprime la cadena en un flujo de salida
 void Cadena::Write(std::ostream& os) const {
-  os << palabra_ << std::endl;
+  os << palabra_;
 }
 
 // Sobrecarga del operador >> para leer una Cadena
