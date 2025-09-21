@@ -8,8 +8,10 @@
 // Correo: alu0101743011@ull.edu.es
 // Fecha: 23/09/2025
 // Archivo cya-P02-strings.cc: programa cliente.
-// Contiene la función main del proyecto que usa las clases X e Y
-// para ... (indicar brevemente el objetivo)
+// Función main del proyecto:
+// Usa las clases Alfabeto, Cadena y Lenguaje para:
+// Leer datos por un archivo de entrada, realizar las operaciones
+// deseadas, y escribir los resultados en un archivo de salida.
 // Referencias:
 // Set -> https://www.youtube.com/watch?v=i02_JDJS3yw
 // Archivos -> https://www.w3schools.com/cpp/cpp_files.asp
