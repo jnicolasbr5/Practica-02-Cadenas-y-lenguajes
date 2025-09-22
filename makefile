@@ -1,14 +1,14 @@
-PROG = p02_strings
+PROGRAMA = p02_strings
 CXX = g++
 CXXFLAGS = -std=c++17 -Wall -g
 
 SOURCES = cya-P02-strings.cc alfabeto.cc cadena.cc lenguaje.cc
 OBJECTS = $(SOURCES:.cc=.o)
 
-all: $(PROG)
+all: $(PROGRAMA)
 
-$(PROG): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $(PROG) $(OBJECTS)
+$(PROGRAMA): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $(PROGRAMA) $(OBJECTS)
 
 %.o: %.cc
 	$(CXX) $(CXXFLAGS) -c $< -o $@

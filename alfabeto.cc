@@ -7,7 +7,6 @@
 // Autor: Juan Nicolás Becerra Rogatinscaia
 // Correo: alu0101743011@ull.edu.es
 // Fecha: 23/09/2025
-// Finalidad del código
 
 #include <cstdlib>
 #include <iostream>
@@ -56,13 +55,11 @@ void Alfabeto::Read(std::istream& is) {
   tamaño_alfabeto_ = simbolos_.size();
 }
 
-// Sobrecarga del operador << para imprimir un Alfabeto
 std::ostream& operator<<(std::ostream& os, const Alfabeto& alf) {
   alf.Write(os);
   return os;
 }
 
-// Sobrecarga del operador >> para leer un alfabeto
 std::istream& operator>>(std::istream& is, Alfabeto& alf) {
   alf.Read(is);
   return is;

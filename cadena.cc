@@ -8,11 +8,11 @@
 // Correo: alu0101743011@ull.edu.es
 // Fecha: 23/09/2025
 
-#include "cadena.h"
-
 #include <algorithm>
 #include <iostream>
 #include <string>
+
+#include "cadena.h"
 
 // Construye el objeto con la cadena y su longitud
 Cadena::Cadena(const std::string& palabra) // Comprueba si es cadena vacía
@@ -46,13 +46,11 @@ void Cadena::Write(std::ostream& os) const {
   os << palabra_;
 }
 
-// Sobrecarga del operador >> para leer una Cadena
 std::istream& operator>>(std::istream& is, Cadena& c) {
   c.Read(is);
   return is;
 }
 
-// Sobrecarga del operador << para imprimir una Cadena
 std::ostream& operator<<(std::ostream& os, const Cadena& c) {
   c.Write(os);
   return os;
