@@ -24,12 +24,9 @@ void Lenguaje::Reiniciar() {
 
 // Añade todos los sufijos de una cadena a un lenguaje
 void Lenguaje::Sufijos(const Cadena& c) {
-  if (tamaño_lenguaje_ != 1) Reiniciar(); // Si el lenguaje tiene otras cadenas, lo reinicia
-  tamaño_lenguaje_ += c.GetLongitud(); // Nº de cadenas que se van a añadir al lenguaje
-  std::string palabra = c.GetCadena();
   std::string concatenacion;
   for (int i = c.GetLongitud() - 1; i >= 0; i--) {
-    concatenacion = palabra[i] + concatenacion; // Concateno delante de la cadena
+    concatenacion = c.GetCadena()[i] + concatenacion; // Concateno delante de la cadena
     conjunto_.insert(Cadena(concatenacion));
   }
 }
@@ -41,6 +38,23 @@ void Lenguaje::Prefijos(const Cadena& c) {
   std::string concatenacion;
   for (char d : c.GetCadena()) {
     concatenacion += d; // Concateno detrás de la cadena
+    conjunto_.insert(Cadena(concatenacion));
+  }
+}
+
+// Muestra todas las posibles subcadenas a un lenguaje
+void Lenguaje::Subcadenas(const Cadena& cad) {
+  Prefijos(cad);
+  Sufijos(cad);
+  std::string concatenacion;
+  for (char d : cad.GetCadena()) {
+    concatenacion = d;
+    conjunto_.insert(Cadena(concatenacion));
+  }
+  int size = cad.GetCadena().size();
+  for (int i = 0; i < size - 1; i++) {
+    int j = i + 1;
+    concatenacion = cad.GetCadena()[i] + cad.GetCadena()[j];
     conjunto_.insert(Cadena(concatenacion));
   }
 }

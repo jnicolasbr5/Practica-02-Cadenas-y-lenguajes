@@ -40,6 +40,7 @@ class Lenguaje {
     // Cadenas
     void Sufijos(const Cadena& c);
     void Prefijos(const Cadena& c);
+    void Subcadenas(const Cadena& c);
 };
 
 // Sobrecarga de operador

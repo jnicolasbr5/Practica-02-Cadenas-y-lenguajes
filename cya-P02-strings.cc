@@ -103,7 +103,7 @@ int main(int argc, char* argv[]) {
   }
   std::string codigo_operacion = argv[3];
   std::set<std::string> lista_codigos = {"Alfabeto", "Longitud", 
-                                        "Inversa", "Prefijos", "Sufijos"};
+                                        "Inversa", "Prefijos", "Sufijos", "Subcadenas"};
   
   // Comprueba si el código de operación dado coincide 
   if (lista_codigos.find(codigo_operacion) == lista_codigos.end()) {
@@ -129,6 +129,9 @@ int main(int argc, char* argv[]) {
     } else if (codigo_operacion == "Sufijos") {
       afijos.Sufijos(palabra);
       archivo_salida << afijos;
+    } else if (codigo_operacion == "Subcadenas") {
+      afijos.Subcadenas(palabra);
+      archivo_salida<< afijos;
     }
   }
   return 0;
