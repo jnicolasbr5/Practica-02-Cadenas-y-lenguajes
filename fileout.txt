@@ -1,1 +1,1 @@
-{&, a, b, Ã, Äab, ba, abb, bba, abba, }
+{&, a, b, Â, Ã, Ä, ab, ba, abb, bba, abba}

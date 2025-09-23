@@ -44,18 +44,25 @@ void Lenguaje::Prefijos(const Cadena& c) {
 
 // Muestra todas las posibles subcadenas a un lenguaje
 void Lenguaje::Subcadenas(const Cadena& cad) {
-  Prefijos(cad);
-  Sufijos(cad);
   std::string concatenacion;
   for (char d : cad.GetCadena()) {
-    concatenacion = d;
+    concatenacion += d; // Concateno detrás de la cadena
     conjunto_.insert(Cadena(concatenacion));
   }
-  int size = cad.GetCadena().size();
-  for (int i = 0; i < size - 1; i++) {
-    int j = i + 1;
-    concatenacion = cad.GetCadena()[i] + cad.GetCadena()[j];
+  concatenacion = "";
+  for (int i = cad.GetLongitud() - 1; i >= 0; i--) {
+    concatenacion = cad.GetCadena()[i] + concatenacion; // Concateno delante de la cadena
     conjunto_.insert(Cadena(concatenacion));
+  }
+  std::string palabra = cad.GetCadena();
+  for (char d : palabra) {
+    concatenacion = d;
+    conjunto_.insert(Cadena(concatenacion));
+    for (char e : palabra) {
+      concatenacion = "";
+      concatenacion = d + e;
+      conjunto_.insert(Cadena(concatenacion));
+    }
   }
 }
 
@@ -65,7 +72,8 @@ void Lenguaje::Write(std::ostream& os) const {
   os << "{";
   for (Cadena c : conjunto_) {
     os << c.GetCadena();
-    if (i != tamaño_lenguaje_) {
+    int size = conjunto_.size();
+    if (i != size) {
       os << ", ";
     }
     i++;
