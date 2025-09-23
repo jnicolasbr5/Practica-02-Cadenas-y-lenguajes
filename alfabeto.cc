@@ -18,7 +18,7 @@ bool Alfabeto::IsEmpty() const {
   return simbolos_.empty();
 }
 
-// Comprueba que la cadena coincide con los símbolos de la cadena
+// Comprueba que la cadena coincide con los símbolos del alfabeto
 void Alfabeto::ComprobarAlfabetoCadena(const Cadena& palabra) {
   for (char c : palabra.GetCadena()) {
     if (simbolos_.find(c) == simbolos_.end()) {
